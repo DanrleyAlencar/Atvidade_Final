@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <title>Progeto Web</title>
+
+    <Script>
+        function imc(){
+            var nome = form_imc.nome.value;
+            var peso = form_imc.peso.value;
+            var altura = form_imc.altura.value;
+            var tatal;
+
+            if(peso/(altura*altura) <=18.5 ){
+                total = (peso / (altura * altura));
+                var resultado = 'Baixo Peso'
+                var msn ='Peso Baixo Para Altura. Maior Probabilidade de Anorexia.'
+            } 
+            else if (peso/(altura*altura) >18.6  <=24.9 ){
+                total = parseFloat(peso / (altura * altura));
+                var resultado = 'Peso Normal'
+                var msn ='Maior Probabilidade de ser um Individuo Saudável.'
+            }
+            else if (peso/(altura*altura) >25  <=29.9 ){
+                total = (peso / (altura * altura));
+                var resultado = 'Pré Obesidade'
+                var msn ='Alguma Probabilidade de Problemas de Saúde. Predispodição a Tornar-se Obeso.'
+            }
+            else if (peso/(altura*altura) >30  <=34.9 ){
+                total = (peso / (altura * altura));
+                var resultado = 'Obesidade Grau I'
+                var msn ='risco moderado de diabetes tipo II, hipertensão, colesterol, cardiopatia'
+            }
+            else if (peso/(altura*altura) >35 <39.9 ){
+                total = (peso / (altura * altura));
+                var resultado = 'Obesidade Grau II'
+                var msn ='risco grave. aumenta o risco das doencas associadas. o risco de morbidade aumenta 50% '
+            }
+            else if (peso/(altura*altura) >40 ){
+                total = (peso / (altura * altura));
+                var resultado = 'Obesidade Grau III ou Obesidade Morbida'
+                var msn ='RISCO MUITO GRAVE. O RISCO DE DOENÇAS ASSOCIADAS ASSIM COMO A MORTALIDADE AUMENTA 90%'
+            }
+
+            
+
+
+
+            //document.write(nome+peso+altura)
+            document.getElementById("resultado").innerHTML=
+            "---------------------------------------IMC-----------------------------------------------"+
+            "<br>Paciente: "+nome+
+            "<br>Peso: "+peso+
+            "<br>Altura: "+altura+
+            "<br>IMC: "+total.toFixed(2)+
+            "<br><br>Olá "+nome+" Você Está No Nivel de Obesidade "+resultado+" <br> Com Este Nivel de IMC Voçê Está Propenso a Apesentar Os Seguintes Problemas de Saúde:<br>"+msn+ 
+            "<br>"+
+            "------------------------------------------------------------------------------------------------"
+
+
+        }
+    </Script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">Projeto Web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="questao1.html">Questão 1</a>
+                <a class="dropdown-item" href="questao2.html">Questão 2</a>
+                <a class="dropdown-item" href="questao3.html">Questão 3</a>
+                <a class="dropdown-item" href="questao4.html">Questão 4</a>
+          
+              </div>
+            </li>
+          </ul>    
+        </div>
+    </nav>
+
+    
+
+    <main role="main" class="container">
+            <div class="starter-template">
+                <h1>Questao 4</h1>
+                <p class="lead">Software para Calcular o INDICE DE MASSA CORPORAL.</p>
+            </div>
+
+            <form name="form_imc" id="form_imc" method="POST" action="">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu Nome">
+                  </div>
+                <div class="form-row">
+                  <div class="col">
+                    <input type="number" class="form-control" id="peso" placeholder="Informe Seu Peso">
+                  </div>
+                  <div class="col">
+                    <input type="number" class="form-control" id="altura" placeholder="Informe sua Altura">
+                  </div>
+                </div>
+                <br><br>
+                <button onclick="imc()" type="button" class="btn btn-primary">Calcular</button>
+                <br><br>
+              </form>
+              <br><br>
+              <p id="resultado"></p>
+
+           
+    </main><!-- /.container -->
+
+
+<!---------------Rodapé------------->
+
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site Desenvolvido por DanrleyAlencar 2020 - Code in <a target="_blank" href="https://github.com/DanrleyAlencar/Atvidade_Final.git">GitHub</a> </span>
+        </div>
+    </footer>  
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
